@@ -90,3 +90,44 @@ console.log(str.substr(2, 4)) // 'ring', from the 2nd position get 4 characters
 // 1. A lowercase letter is always greater than the uppercase:
 
 console.log("a" > "Z") // true
+
+// str.localeCompare(str2) returns an integer indicating whether str is less, equal or greater than str2 according to the language rules. It returns a negative number if str is less than str2, a positive number if str is greater than str2, and 0 if they are equal.
+
+console.log("Österreich".localeCompare("Zealand"));
+
+// Tasks
+
+function ucFirst(str) {
+    if (!str) return str;
+    return str[0].toUpperCase() + str.slice(1);
+}
+
+console.log(ucFirst("john")); // John
+
+function checkSpan(str) {
+    str = str.toLowerCase();
+    if (str.includes("viagra") || str.includes("XXX")) {
+        return true;
+    }
+    return false;
+}
+console.log(checkSpan("buy ViAgRA now"));
+
+const truncate = (str, maxlength) => {
+    if (str.length > maxlength) {
+        return str.slice(0, maxlength) + '...';
+    }
+    return str;
+}
+console.log(
+  truncate("What I'd like to tell on this topic is:", 20) ==
+    "What I'd like to te…",
+);
+console.log(truncate("Hi everyone!", 20) == "Hi everyone!");
+console.log(truncate("My name is alli olarinde", 11))
+
+const extractCurrencyValue = (str) => {
+    return Number(str.slice(1));
+}
+
+console.log(extractCurrencyValue('$120') === 120);
