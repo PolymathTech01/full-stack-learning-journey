@@ -45,3 +45,39 @@ let arr = [1, 2, 3]
 function shuffle(array){
     array.sort(() => Math.random() - 0.5)
 }
+
+function getAverageAge(users) {
+    return Math.round(users.reduce((acc, cur) => acc + cur.age, 0) / users.length)
+}
+
+console.log(getAverageAge(users))
+
+function unique(arr){
+    let result = []
+    for (let str of arr){
+        if (!result.includes(str)) {
+            result.push(str)
+        }
+    }
+    return result
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log(unique(strings))
+
+function groupById(users){
+    return users.reduce((obj, value) => {
+        obj[value.id] = value;
+        return obj;
+    }, {})
+}
+users = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+console.log(groupById(users))
