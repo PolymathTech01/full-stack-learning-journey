@@ -95,7 +95,7 @@ console.log(users.findIndex((user) => user.name == "John")); // returns the inde
 console.log(users.findLastIndex((user) => user.name == "John"));
 
 // filter, it returns an array with all matching elements
-// The find method looks for a single (first) element that make sthe fucntion returns true.
+// The find method looks for a single (first) element that makes the function returns true.
 // If there may be many, we can use arr.filter(fn)
 
 let results = users.filter((user) => user.name == "John");
